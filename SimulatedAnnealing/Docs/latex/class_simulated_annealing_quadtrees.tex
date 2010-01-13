@@ -1,0 +1,81 @@
+\hypertarget{class_simulated_annealing_quadtrees}{
+\section{SimulatedAnnealingQuadtrees Class Reference}
+\label{class_simulated_annealing_quadtrees}\index{SimulatedAnnealingQuadtrees@{SimulatedAnnealingQuadtrees}}
+}
+
+
+Inherits \hyperlink{class_simulated_annealing}{SimulatedAnnealing$<$ QuadtreeSolution, double $>$}.\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_quadtree_solution}{QuadtreeSolution} $\ast$ \hyperlink{class_simulated_annealing_quadtrees_abb953a7ff8aa3bed1d6fc99d3a3616ed}{giveRandomNeighbour} (const \hyperlink{class_quadtree_solution}{QuadtreeSolution} \&lastSolution) const 
+\item 
+double \hyperlink{class_simulated_annealing_quadtrees_ab067118f2ceecfe6b447b5fb7585a763}{calcDistanceToTarget} (const \hyperlink{class_quadtree_solution}{QuadtreeSolution} \&solution) const 
+\item 
+void \hyperlink{class_simulated_annealing_quadtrees_a4228034780e8cdebe3beb9c89a646373}{printStatus} (const \hyperlink{class_quadtree_solution}{QuadtreeSolution} \&solution, double temp)
+\item 
+bool \hyperlink{class_simulated_annealing_quadtrees_ae402bb212c241a07477e46348f889fdf}{shouldStopHook} (const \hyperlink{class_quadtree_solution}{QuadtreeSolution} \&solution)
+\item 
+\hypertarget{class_simulated_annealing_quadtrees_ad5f61461ab5e28b70e8419e0596fa6a4}{
+{\bfseries SimulatedAnnealingQuadtrees} (const \hyperlink{class_quadtree_solution}{QuadtreeSolution} \&startSolution, const double \&target, double starttemp, double precision, double alpha)}
+\label{class_simulated_annealing_quadtrees_ad5f61461ab5e28b70e8419e0596fa6a4}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_simulated_annealing_quadtrees_ab067118f2ceecfe6b447b5fb7585a763}{
+\index{SimulatedAnnealingQuadtrees@{SimulatedAnnealingQuadtrees}!calcDistanceToTarget@{calcDistanceToTarget}}
+\index{calcDistanceToTarget@{calcDistanceToTarget}!SimulatedAnnealingQuadtrees@{SimulatedAnnealingQuadtrees}}
+\subsubsection[{calcDistanceToTarget}]{\setlength{\rightskip}{0pt plus 5cm}double SimulatedAnnealingQuadtrees::calcDistanceToTarget (const {\bf QuadtreeSolution} \& {\em solution}) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_simulated_annealing_quadtrees_ab067118f2ceecfe6b447b5fb7585a763}
+This function determines how we can compare the target value and the current solution their types aren't required to be the same, as long as this function can determine a double which symbolises the distance. 
+\begin{DoxyParams}{Parameters}
+\item[{\em solution}]The previous solution of which the distance to the target needs to be determined \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value that symbolises the distance to the target 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_simulated_annealing_ac68b8a3c38d3095893498b9a7e292346}{SimulatedAnnealing$<$ QuadtreeSolution, double $>$}.\hypertarget{class_simulated_annealing_quadtrees_abb953a7ff8aa3bed1d6fc99d3a3616ed}{
+\index{SimulatedAnnealingQuadtrees@{SimulatedAnnealingQuadtrees}!giveRandomNeighbour@{giveRandomNeighbour}}
+\index{giveRandomNeighbour@{giveRandomNeighbour}!SimulatedAnnealingQuadtrees@{SimulatedAnnealingQuadtrees}}
+\subsubsection[{giveRandomNeighbour}]{\setlength{\rightskip}{0pt plus 5cm}{\bf QuadtreeSolution} $\ast$ SimulatedAnnealingQuadtrees::giveRandomNeighbour (const {\bf QuadtreeSolution} \& {\em lastSolution}) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_simulated_annealing_quadtrees_abb953a7ff8aa3bed1d6fc99d3a3616ed}
+This function returns a new random neighbour, how the neihbour is calculated is entirely up to the user (and can influence the result of the algorythm a lot) 
+\begin{DoxyParams}{Parameters}
+\item[{\em lastSolution}]The previous solution which can optionally (and should) be used to determine the new neighbour \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the newly chosen neighbour (you don't have to worry about deleting) 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_simulated_annealing_a71b64ea8dca2d5bba7fb6d4b6cde1c81}{SimulatedAnnealing$<$ QuadtreeSolution, double $>$}.\hypertarget{class_simulated_annealing_quadtrees_a4228034780e8cdebe3beb9c89a646373}{
+\index{SimulatedAnnealingQuadtrees@{SimulatedAnnealingQuadtrees}!printStatus@{printStatus}}
+\index{printStatus@{printStatus}!SimulatedAnnealingQuadtrees@{SimulatedAnnealingQuadtrees}}
+\subsubsection[{printStatus}]{\setlength{\rightskip}{0pt plus 5cm}void SimulatedAnnealingQuadtrees::printStatus (const {\bf QuadtreeSolution} \& {\em solution}, \/  double {\em temp})\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_simulated_annealing_quadtrees_a4228034780e8cdebe3beb9c89a646373}
+This function can be used to print some info during execution of the algorythm. 
+\begin{DoxyParams}{Parameters}
+\item[{\em solution}]The solution that was last considered \item[{\em temp}]The current temperature \end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_simulated_annealing_accc3e21d0c77ac87ce604f17e014c11d}{SimulatedAnnealing$<$ QuadtreeSolution, double $>$}.\hypertarget{class_simulated_annealing_quadtrees_ae402bb212c241a07477e46348f889fdf}{
+\index{SimulatedAnnealingQuadtrees@{SimulatedAnnealingQuadtrees}!shouldStopHook@{shouldStopHook}}
+\index{shouldStopHook@{shouldStopHook}!SimulatedAnnealingQuadtrees@{SimulatedAnnealingQuadtrees}}
+\subsubsection[{shouldStopHook}]{\setlength{\rightskip}{0pt plus 5cm}bool SimulatedAnnealingQuadtrees::shouldStopHook (const {\bf QuadtreeSolution} \& {\em solution})\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_simulated_annealing_quadtrees_ae402bb212c241a07477e46348f889fdf}
+This hook determines whether or not to go on with the search, it extends the already present stop condition that stops execution when the distance of a solution to the target is smaller than the precision required.
+
+Standard implementation always returns false. 
+\begin{DoxyParams}{Parameters}
+\item[{\em solution}]The solution that will be considered as final solution \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A boolean value determining whether or not to stop 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_simulated_annealing_a52fd0bfedf6b9102adaba0ad494c8d54}{SimulatedAnnealing$<$ QuadtreeSolution, double $>$}.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+D:/Documents/Visual Studio 2008/Projects/SimulatedAnnealingPointers/SimulatedAnnealing/Quadtrees/simulated\_\-annealing\_\-quadtrees.cpp\end{DoxyCompactItemize}

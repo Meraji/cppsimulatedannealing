@@ -1,0 +1,64 @@
+\hypertarget{class_simulated_annealing_n_queens}{
+\section{SimulatedAnnealingNQueens Class Reference}
+\label{class_simulated_annealing_n_queens}\index{SimulatedAnnealingNQueens@{SimulatedAnnealingNQueens}}
+}
+
+
+Inherits \hyperlink{class_simulated_annealing}{SimulatedAnnealing$<$ NQueensBoard, int $>$}.\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_n_queens_board}{NQueensBoard} $\ast$ \hyperlink{class_simulated_annealing_n_queens_a137985c9ff6d0e88cdaf5859c29b7e19}{giveRandomNeighbour} (const \hyperlink{class_n_queens_board}{NQueensBoard} \&lastSolution) const 
+\item 
+double \hyperlink{class_simulated_annealing_n_queens_a1cd2713f3c67f9c0b4d6ce64d31690ad}{calcDistanceToTarget} (const \hyperlink{class_n_queens_board}{NQueensBoard} \&solution) const 
+\item 
+void \hyperlink{class_simulated_annealing_n_queens_a8165b39087c35fa62127c7f392e25d8b}{printStatus} (const \hyperlink{class_n_queens_board}{NQueensBoard} \&solution, double temp)
+\item 
+\hypertarget{class_simulated_annealing_n_queens_a73633cbb6d1cb2e9aefa2b43a57a4f99}{
+{\bfseries SimulatedAnnealingNQueens} (const \hyperlink{class_n_queens_board}{NQueensBoard} \&startSolution, const int \&target, double starttemp, double precision, double alpha)}
+\label{class_simulated_annealing_n_queens_a73633cbb6d1cb2e9aefa2b43a57a4f99}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_simulated_annealing_n_queens_a1cd2713f3c67f9c0b4d6ce64d31690ad}{
+\index{SimulatedAnnealingNQueens@{SimulatedAnnealingNQueens}!calcDistanceToTarget@{calcDistanceToTarget}}
+\index{calcDistanceToTarget@{calcDistanceToTarget}!SimulatedAnnealingNQueens@{SimulatedAnnealingNQueens}}
+\subsubsection[{calcDistanceToTarget}]{\setlength{\rightskip}{0pt plus 5cm}double SimulatedAnnealingNQueens::calcDistanceToTarget (const {\bf NQueensBoard} \& {\em solution}) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_simulated_annealing_n_queens_a1cd2713f3c67f9c0b4d6ce64d31690ad}
+This function determines how we can compare the target value and the current solution their types aren't required to be the same, as long as this function can determine a double which symbolises the distance. 
+\begin{DoxyParams}{Parameters}
+\item[{\em solution}]The previous solution of which the distance to the target needs to be determined \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value that symbolises the distance to the target 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_simulated_annealing_ac68b8a3c38d3095893498b9a7e292346}{SimulatedAnnealing$<$ NQueensBoard, int $>$}.\hypertarget{class_simulated_annealing_n_queens_a137985c9ff6d0e88cdaf5859c29b7e19}{
+\index{SimulatedAnnealingNQueens@{SimulatedAnnealingNQueens}!giveRandomNeighbour@{giveRandomNeighbour}}
+\index{giveRandomNeighbour@{giveRandomNeighbour}!SimulatedAnnealingNQueens@{SimulatedAnnealingNQueens}}
+\subsubsection[{giveRandomNeighbour}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NQueensBoard} $\ast$ SimulatedAnnealingNQueens::giveRandomNeighbour (const {\bf NQueensBoard} \& {\em lastSolution}) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_simulated_annealing_n_queens_a137985c9ff6d0e88cdaf5859c29b7e19}
+This function returns a new random neighbour, how the neihbour is calculated is entirely up to the user (and can influence the result of the algorythm a lot) 
+\begin{DoxyParams}{Parameters}
+\item[{\em lastSolution}]The previous solution which can optionally (and should) be used to determine the new neighbour \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the newly chosen neighbour (you don't have to worry about deleting) 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_simulated_annealing_a71b64ea8dca2d5bba7fb6d4b6cde1c81}{SimulatedAnnealing$<$ NQueensBoard, int $>$}.\hypertarget{class_simulated_annealing_n_queens_a8165b39087c35fa62127c7f392e25d8b}{
+\index{SimulatedAnnealingNQueens@{SimulatedAnnealingNQueens}!printStatus@{printStatus}}
+\index{printStatus@{printStatus}!SimulatedAnnealingNQueens@{SimulatedAnnealingNQueens}}
+\subsubsection[{printStatus}]{\setlength{\rightskip}{0pt plus 5cm}void SimulatedAnnealingNQueens::printStatus (const {\bf NQueensBoard} \& {\em solution}, \/  double {\em temp})\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_simulated_annealing_n_queens_a8165b39087c35fa62127c7f392e25d8b}
+This function can be used to print some info during execution of the algorythm. 
+\begin{DoxyParams}{Parameters}
+\item[{\em solution}]The solution that was last considered \item[{\em temp}]The current temperature \end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_simulated_annealing_accc3e21d0c77ac87ce604f17e014c11d}{SimulatedAnnealing$<$ NQueensBoard, int $>$}.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+D:/Documents/Visual Studio 2008/Projects/SimulatedAnnealingPointers/SimulatedAnnealing/NQueens/simulated\_\-annealing\_\-nqueens.cpp\end{DoxyCompactItemize}

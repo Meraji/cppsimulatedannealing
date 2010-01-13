@@ -1,0 +1,199 @@
+\hypertarget{class_simulated_annealing}{
+\section{SimulatedAnnealing$<$ Solution, Target $>$ Class Template Reference}
+\label{class_simulated_annealing}\index{SimulatedAnnealing@{SimulatedAnnealing}}
+}
+
+
+Simulated Annealing Framework: A class to help users implement simulated annealing in an easy and flexible way.  
+
+
+{\ttfamily \#include $<$simulated\_\-annealing.h$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_simulated_annealing_a8bb5e4492141673dea7f6803a2b95466}{SimulatedAnnealing} (const Solution \&startSolution, const Target \&target, double starttemp, double precision, double alpha)
+\item 
+void \hyperlink{class_simulated_annealing_ac69c1bcb744cf2946b4196afe8083f8f}{solve} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual Solution $\ast$ \hyperlink{class_simulated_annealing_a71b64ea8dca2d5bba7fb6d4b6cde1c81}{giveRandomNeighbour} (const Solution \&lastSolution) const =0
+\item 
+virtual double \hyperlink{class_simulated_annealing_ac68b8a3c38d3095893498b9a7e292346}{calcDistanceToTarget} (const Solution \&solution) const =0
+\item 
+virtual bool \hyperlink{class_simulated_annealing_a52fd0bfedf6b9102adaba0ad494c8d54}{shouldStopHook} (const Solution \&solution)
+\item 
+virtual void \hyperlink{class_simulated_annealing_accc3e21d0c77ac87ce604f17e014c11d}{printStatus} (const Solution \&solution, double temp)
+\item 
+virtual double \hyperlink{class_simulated_annealing_ab452f2d789d884d549ea60515a3a9c2f}{calcProbability} (double change, double temp) const 
+\item 
+virtual double \hyperlink{class_simulated_annealing_aa9cc1b49fb6f1f96b221c013e6ff7f00}{calcNewTemp} (double lastTemp) const 
+\item 
+\hypertarget{class_simulated_annealing_aaa0bac272d0b4c72f0a8a2ac9c983364}{
+bool {\bfseries shouldStop} (const Solution \&solution)}
+\label{class_simulated_annealing_aaa0bac272d0b4c72f0a8a2ac9c983364}
+
+\item 
+\hypertarget{class_simulated_annealing_aba128b7b022db978dc34a9310e0bf3b3}{
+double {\bfseries calcDistanceChange} (const Solution \&oldSolution, const Solution \&newSolution) const }
+\label{class_simulated_annealing_aba128b7b022db978dc34a9310e0bf3b3}
+
+\item 
+\hypertarget{class_simulated_annealing_a2226b28370ba98358cb9b895666cf2b5}{
+bool {\bfseries accept} (const Solution \&oldSolution, const Solution \&newSolution, double temp) const }
+\label{class_simulated_annealing_a2226b28370ba98358cb9b895666cf2b5}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_simulated_annealing_a3a99f59868ff266a911878145366e8f4}{
+const Target $\ast$ {\bfseries TARGET}}
+\label{class_simulated_annealing_a3a99f59868ff266a911878145366e8f4}
+
+\item 
+\hypertarget{class_simulated_annealing_aaab6fccd2041ded2a46977c660422028}{
+const double {\bfseries PRECISION}}
+\label{class_simulated_annealing_aaab6fccd2041ded2a46977c660422028}
+
+\item 
+\hypertarget{class_simulated_annealing_aaf095d1d6ccbd087cdc57db55c373757}{
+const double {\bfseries ALPHA}}
+\label{class_simulated_annealing_aaf095d1d6ccbd087cdc57db55c373757}
+
+\item 
+\hypertarget{class_simulated_annealing_a596a28b06c9975726d7838ee78cd1057}{
+Solution $\ast$ {\bfseries solution}}
+\label{class_simulated_annealing_a596a28b06c9975726d7838ee78cd1057}
+
+\item 
+\hypertarget{class_simulated_annealing_ae9d10c485a87ba97ffbc36351c1a762b}{
+double {\bfseries temp}}
+\label{class_simulated_annealing_ae9d10c485a87ba97ffbc36351c1a762b}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Solution, class Target$>$ class SimulatedAnnealing$<$ Solution, Target $>$}
+
+Simulated Annealing Framework: A class to help users implement simulated annealing in an easy and flexible way. Simulated Annealing Class
+
+This class offers the user a flexibel framework to use for the implementation of applications of Simulated Annealing. To use it the user needs to create a child class that implements the 3 required functions listed below.
+
+Require overriding:
+\begin{DoxyItemize}
+\item \hyperlink{class_simulated_annealing_a71b64ea8dca2d5bba7fb6d4b6cde1c81}{giveRandomNeighbour()}
+\item \hyperlink{class_simulated_annealing_ac68b8a3c38d3095893498b9a7e292346}{calcDistanceToTarget()}
+\end{DoxyItemize}
+
+Optionale overriding:
+\begin{DoxyItemize}
+\item \hyperlink{class_simulated_annealing_a52fd0bfedf6b9102adaba0ad494c8d54}{shouldStopHook()}
+\item \hyperlink{class_simulated_annealing_accc3e21d0c77ac87ce604f17e014c11d}{printStatus()}
+\item \hyperlink{class_simulated_annealing_ab452f2d789d884d549ea60515a3a9c2f}{calcProbability()}
+\item \hyperlink{class_simulated_annealing_aa9cc1b49fb6f1f96b221c013e6ff7f00}{calcNewTemp()}
+\end{DoxyItemize}
+
+The type of the candidate solutions can be set using template parameters. The type of the target value we want to achieve can also be set using template parameters. The link between these two types is made by the calcDistanceToTarget function which is one of the functions that require overriding. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_simulated_annealing_a8bb5e4492141673dea7f6803a2b95466}{
+\index{SimulatedAnnealing@{SimulatedAnnealing}!SimulatedAnnealing@{SimulatedAnnealing}}
+\index{SimulatedAnnealing@{SimulatedAnnealing}!SimulatedAnnealing@{SimulatedAnnealing}}
+\subsubsection[{SimulatedAnnealing}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Solution, class Target$>$ {\bf SimulatedAnnealing}$<$ Solution, Target $>$::{\bf SimulatedAnnealing} (const Solution \& {\em startSolution}, \/  const Target \& {\em target}, \/  double {\em starttemp}, \/  double {\em precision}, \/  double {\em alpha})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_simulated_annealing_a8bb5e4492141673dea7f6803a2b95466}
+Constructor 
+\begin{DoxyParams}{Parameters}
+\item[{\em startSolution}]The solution in the domain where you want to start the search \item[{\em TARGET}]The TARGET value you are looking for \item[{\em starttemp}]The starttemperature, the higher this temperature, the longer the algorythm will allow uphill moves \item[{\em PRECISION}]The required PRECISION for a solution to be acceptable \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_simulated_annealing_ac68b8a3c38d3095893498b9a7e292346}{
+\index{SimulatedAnnealing@{SimulatedAnnealing}!calcDistanceToTarget@{calcDistanceToTarget}}
+\index{calcDistanceToTarget@{calcDistanceToTarget}!SimulatedAnnealing@{SimulatedAnnealing}}
+\subsubsection[{calcDistanceToTarget}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Solution, class Target$>$ virtual double {\bf SimulatedAnnealing}$<$ Solution, Target $>$::calcDistanceToTarget (const Solution \& {\em solution}) const\hspace{0.3cm}{\ttfamily  \mbox{[}protected, pure virtual\mbox{]}}}}
+\label{class_simulated_annealing_ac68b8a3c38d3095893498b9a7e292346}
+This function determines how we can compare the target value and the current solution their types aren't required to be the same, as long as this function can determine a double which symbolises the distance. 
+\begin{DoxyParams}{Parameters}
+\item[{\em solution}]The previous solution of which the distance to the target needs to be determined \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value that symbolises the distance to the target 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_simulated_annealing_n_queens_a1cd2713f3c67f9c0b4d6ce64d31690ad}{SimulatedAnnealingNQueens}, \hyperlink{class_simulated_annealing_quadtrees_ab067118f2ceecfe6b447b5fb7585a763}{SimulatedAnnealingQuadtrees}, and \hyperlink{class_simulated_annealing_sin_a064890c05ac35e04b71ce6a1405f1e36}{SimulatedAnnealingSin}.\hypertarget{class_simulated_annealing_aa9cc1b49fb6f1f96b221c013e6ff7f00}{
+\index{SimulatedAnnealing@{SimulatedAnnealing}!calcNewTemp@{calcNewTemp}}
+\index{calcNewTemp@{calcNewTemp}!SimulatedAnnealing@{SimulatedAnnealing}}
+\subsubsection[{calcNewTemp}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Solution , class Target $>$ double {\bf SimulatedAnnealing}$<$ Solution, Target $>$::calcNewTemp (double {\em lastTemp}) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline, protected, virtual\mbox{]}}}}
+\label{class_simulated_annealing_aa9cc1b49fb6f1f96b221c013e6ff7f00}
+This function calculates the new temperature based on the previous temperature.
+
+CAUTION: The temperature value returned will be checked, it has to be a positive value. 
+\begin{DoxyParams}{Parameters}
+\item[{\em lastTemp}]The previous temperature which now needs to be updated \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The newly calculated temperature 
+\end{DoxyReturn}
+\hypertarget{class_simulated_annealing_ab452f2d789d884d549ea60515a3a9c2f}{
+\index{SimulatedAnnealing@{SimulatedAnnealing}!calcProbability@{calcProbability}}
+\index{calcProbability@{calcProbability}!SimulatedAnnealing@{SimulatedAnnealing}}
+\subsubsection[{calcProbability}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Solution , class Target $>$ double {\bf SimulatedAnnealing}$<$ Solution, Target $>$::calcProbability (double {\em change}, \/  double {\em temp}) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline, protected, virtual\mbox{]}}}}
+\label{class_simulated_annealing_ab452f2d789d884d549ea60515a3a9c2f}
+This function can be used to change the way the probability for acceptance of uphill moves is calculated. It's a function considering the improvement of the distance to the TARGET of the old and the new solution and the temperature.
+
+CAUTION: The probability value returned will be checked, probabilities adhere to the following rule $ 0<=probability<=1 $
+
+Standard implementation: $ P(\Delta(f(s)), T) = exp(\frac{\Delta(f(s))}{T}) $
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em change}]The change in distance to TARGET between the last and the new solution \item[{\em temp}]The current temperature \end{DoxyParams}
+\hypertarget{class_simulated_annealing_a71b64ea8dca2d5bba7fb6d4b6cde1c81}{
+\index{SimulatedAnnealing@{SimulatedAnnealing}!giveRandomNeighbour@{giveRandomNeighbour}}
+\index{giveRandomNeighbour@{giveRandomNeighbour}!SimulatedAnnealing@{SimulatedAnnealing}}
+\subsubsection[{giveRandomNeighbour}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Solution, class Target$>$ virtual Solution$\ast$ {\bf SimulatedAnnealing}$<$ Solution, Target $>$::giveRandomNeighbour (const Solution \& {\em lastSolution}) const\hspace{0.3cm}{\ttfamily  \mbox{[}protected, pure virtual\mbox{]}}}}
+\label{class_simulated_annealing_a71b64ea8dca2d5bba7fb6d4b6cde1c81}
+This function returns a new random neighbour, how the neihbour is calculated is entirely up to the user (and can influence the result of the algorythm a lot) 
+\begin{DoxyParams}{Parameters}
+\item[{\em lastSolution}]The previous solution which can optionally (and should) be used to determine the new neighbour \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the newly chosen neighbour (you don't have to worry about deleting) 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_simulated_annealing_n_queens_a137985c9ff6d0e88cdaf5859c29b7e19}{SimulatedAnnealingNQueens}, \hyperlink{class_simulated_annealing_quadtrees_abb953a7ff8aa3bed1d6fc99d3a3616ed}{SimulatedAnnealingQuadtrees}, and \hyperlink{class_simulated_annealing_sin_acd5444d158d2877c3d95472cdb8b5297}{SimulatedAnnealingSin}.\hypertarget{class_simulated_annealing_accc3e21d0c77ac87ce604f17e014c11d}{
+\index{SimulatedAnnealing@{SimulatedAnnealing}!printStatus@{printStatus}}
+\index{printStatus@{printStatus}!SimulatedAnnealing@{SimulatedAnnealing}}
+\subsubsection[{printStatus}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Solution, class Target $>$ void {\bf SimulatedAnnealing}$<$ Solution, Target $>$::printStatus (const Solution \& {\em solution}, \/  double {\em temp})\hspace{0.3cm}{\ttfamily  \mbox{[}inline, protected, virtual\mbox{]}}}}
+\label{class_simulated_annealing_accc3e21d0c77ac87ce604f17e014c11d}
+This function can be used to print some info during execution of the algorythm. 
+\begin{DoxyParams}{Parameters}
+\item[{\em solution}]The solution that was last considered \item[{\em temp}]The current temperature \end{DoxyParams}
+
+
+Reimplemented in \hyperlink{class_simulated_annealing_n_queens_a8165b39087c35fa62127c7f392e25d8b}{SimulatedAnnealingNQueens}, and \hyperlink{class_simulated_annealing_quadtrees_a4228034780e8cdebe3beb9c89a646373}{SimulatedAnnealingQuadtrees}.\hypertarget{class_simulated_annealing_a52fd0bfedf6b9102adaba0ad494c8d54}{
+\index{SimulatedAnnealing@{SimulatedAnnealing}!shouldStopHook@{shouldStopHook}}
+\index{shouldStopHook@{shouldStopHook}!SimulatedAnnealing@{SimulatedAnnealing}}
+\subsubsection[{shouldStopHook}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Solution, class Target $>$ bool {\bf SimulatedAnnealing}$<$ Solution, Target $>$::shouldStopHook (const Solution \& {\em solution})\hspace{0.3cm}{\ttfamily  \mbox{[}inline, protected, virtual\mbox{]}}}}
+\label{class_simulated_annealing_a52fd0bfedf6b9102adaba0ad494c8d54}
+This hook determines whether or not to go on with the search, it extends the already present stop condition that stops execution when the distance of a solution to the target is smaller than the precision required.
+
+Standard implementation always returns false. 
+\begin{DoxyParams}{Parameters}
+\item[{\em solution}]The solution that will be considered as final solution \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A boolean value determining whether or not to stop 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{class_simulated_annealing_quadtrees_ae402bb212c241a07477e46348f889fdf}{SimulatedAnnealingQuadtrees}.\hypertarget{class_simulated_annealing_ac69c1bcb744cf2946b4196afe8083f8f}{
+\index{SimulatedAnnealing@{SimulatedAnnealing}!solve@{solve}}
+\index{solve@{solve}!SimulatedAnnealing@{SimulatedAnnealing}}
+\subsubsection[{solve}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Solution , class Target $>$ void {\bf SimulatedAnnealing}$<$ Solution, Target $>$::solve ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_simulated_annealing_ac69c1bcb744cf2946b4196afe8083f8f}
+The public method that is called from a SimulatedAnnealing(or child class)-\/Object 
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+D:/Documents/Visual Studio 2008/Projects/SimulatedAnnealingPointers/SimulatedAnnealing/simulated\_\-annealing.h\end{DoxyCompactItemize}

@@ -1,0 +1,65 @@
+\hypertarget{class_simulated_annealing_sin}{
+\section{SimulatedAnnealingSin Class Reference}
+\label{class_simulated_annealing_sin}\index{SimulatedAnnealingSin@{SimulatedAnnealingSin}}
+}
+
+
+Inherits \hyperlink{class_simulated_annealing}{SimulatedAnnealing$<$ double, double $>$}.\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double $\ast$ \hyperlink{class_simulated_annealing_sin_acd5444d158d2877c3d95472cdb8b5297}{giveRandomNeighbour} (const double \&lastSolution) const 
+\item 
+double \hyperlink{class_simulated_annealing_sin_a064890c05ac35e04b71ce6a1405f1e36}{calcDistanceToTarget} (const double \&solution) const 
+\item 
+\hypertarget{class_simulated_annealing_sin_a7eb83c4051cf9a997145c0c529118eac}{
+{\bfseries SimulatedAnnealingSin} (const double \&startSolution, const double \&target, double starttemp, double precision, double alpha)}
+\label{class_simulated_annealing_sin_a7eb83c4051cf9a997145c0c529118eac}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_simulated_annealing_sin_abaa532defdaef7ae4952040621b52e6d}{
+double {\bfseries calcSin} (const double \&degrees) const }
+\label{class_simulated_annealing_sin_abaa532defdaef7ae4952040621b52e6d}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_simulated_annealing_sin}{SimulatedAnnealingSin}
+
+Example of the use of the \hyperlink{class_simulated_annealing}{SimulatedAnnealing} class Will try to find an angle at which sin(x) is (close to) 1 using Simulated Annealing 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_simulated_annealing_sin_a064890c05ac35e04b71ce6a1405f1e36}{
+\index{SimulatedAnnealingSin@{SimulatedAnnealingSin}!calcDistanceToTarget@{calcDistanceToTarget}}
+\index{calcDistanceToTarget@{calcDistanceToTarget}!SimulatedAnnealingSin@{SimulatedAnnealingSin}}
+\subsubsection[{calcDistanceToTarget}]{\setlength{\rightskip}{0pt plus 5cm}double SimulatedAnnealingSin::calcDistanceToTarget (const double \& {\em solution}) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_simulated_annealing_sin_a064890c05ac35e04b71ce6a1405f1e36}
+This function determines how we can compare the target value and the current solution their types aren't required to be the same, as long as this function can determine a double which symbolises the distance. 
+\begin{DoxyParams}{Parameters}
+\item[{\em solution}]The previous solution of which the distance to the target needs to be determined \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value that symbolises the distance to the target 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_simulated_annealing_ac68b8a3c38d3095893498b9a7e292346}{SimulatedAnnealing$<$ double, double $>$}.\hypertarget{class_simulated_annealing_sin_acd5444d158d2877c3d95472cdb8b5297}{
+\index{SimulatedAnnealingSin@{SimulatedAnnealingSin}!giveRandomNeighbour@{giveRandomNeighbour}}
+\index{giveRandomNeighbour@{giveRandomNeighbour}!SimulatedAnnealingSin@{SimulatedAnnealingSin}}
+\subsubsection[{giveRandomNeighbour}]{\setlength{\rightskip}{0pt plus 5cm}double $\ast$ SimulatedAnnealingSin::giveRandomNeighbour (const double \& {\em lastSolution}) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_simulated_annealing_sin_acd5444d158d2877c3d95472cdb8b5297}
+This function returns a new random neighbour, how the neihbour is calculated is entirely up to the user (and can influence the result of the algorythm a lot) 
+\begin{DoxyParams}{Parameters}
+\item[{\em lastSolution}]The previous solution which can optionally (and should) be used to determine the new neighbour \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the newly chosen neighbour (you don't have to worry about deleting) 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_simulated_annealing_a71b64ea8dca2d5bba7fb6d4b6cde1c81}{SimulatedAnnealing$<$ double, double $>$}.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+D:/Documents/Visual Studio 2008/Projects/SimulatedAnnealingPointers/SimulatedAnnealing/Sin/simulated\_\-annealing\_\-sin.cpp\end{DoxyCompactItemize}
