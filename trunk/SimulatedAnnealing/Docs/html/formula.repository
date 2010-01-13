@@ -1,0 +1,2 @@
+\form#0:$ 0<=probability<=1 $
+\form#1:$ P(\Delta(f(s)), T) = exp(\frac{\Delta(f(s))}{T}) $
